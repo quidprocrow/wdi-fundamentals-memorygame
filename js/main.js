@@ -49,12 +49,29 @@ var createBoard = function () {
 		var cardElement = document.createElement('img');
 		cardElement.setAttribute('src', 'images/back.png');
 		cardElement.setAttribute('data-id', i);
+		cardElement.setAttribute('id', i);
 		cardElement.addEventListener('click', flipCard);
 		document.getElementById('game-board').appendChild(cardElement);
 
 	}
 }
 createBoard();
+document.getElementById('reset').addEventListener('click', resetGame);
+var resetGame = function () {
+	cardsInPlay.pop();
+	cardsInPlay.pop();
+	var cardOne = document.getElementById('0');
+	var cardTwo = document.getElementById('1');
+	var cardThree = document.getElementById('2');
+	var cardFour = document.getElementById('3');
+	cardOne.setAttribute('src', 'images/back.png');
+	cardTwo.setAttribute('src', 'images/back.png');
+	cardThree.setAttribute('src', 'images/back.png');
+	cardFour.setAttribute('src', 'images/back.png');
+	console.log("Reset boss!");
+	alert("Reset!");
+}
+
 
 
 
